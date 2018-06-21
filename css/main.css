@@ -53,6 +53,9 @@ ul.posts li {
 ul li {
     font-size: 1.3em
 }
+ol.posts li {
+    font-size: 1.3em
+}
 em {
     font-size: 1.3em
 }
