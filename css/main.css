@@ -59,6 +59,10 @@ ul li {
     font-size: 1.3em;
     line-height: 1.5em;
 }
+ul li ul li {
+    font-size: 1.0em;
+    line-height: 1.2em;
+}
 ol.posts li {
     font-size: 1.3em;
     line-height: 1.5em;
