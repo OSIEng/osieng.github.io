@@ -107,3 +107,11 @@ td, th {
     margin-right: auto;
     width: 50%;
 }
+
+tr.heading {
+    background-color: var(--header-row-bg-color);
+}
+
+th.heading {
+    background-color: var(--header-row-bg-color);
+}
