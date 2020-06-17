@@ -3,13 +3,17 @@
     --a-color: #999;
     --footer-border-color: #d5d5d5;
     --td-th-color: #dddddd;
+    --paragraph-text-color: #333;
+    --header-row-bg-color: #dddddd;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --a-color: #999;
-        --footer-border-color: #d5d5d5;
-        --td-th-color: #dddddd;
+        --a-color: #f6f6f6;
+        --footer-border-color: #2a2a2a;
+        --td-th-color: #222222;
+        --paragraph-text-color: #fcfcfc;
+        --header-row-bg-color: #222222;
     }
 }
 
@@ -53,7 +57,7 @@ h4 {
 p {
     font-size: 1.3em;
     line-height: 1.5em;
-    color: #333;
+    color: var(--paragraph-text-color);
 }
 footer {
     border-top: 1px solid var(--footer-border-color);
