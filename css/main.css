@@ -5,6 +5,7 @@
     --td-th-color: #dddddd;
     --paragraph-text-color: #333;
     --header-row-bg-color: #dddddd;
+    --page-bg-color: #FFFFFF;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,12 +15,14 @@
         --td-th-color: #222222;
         --paragraph-text-color: #fcfcfc;
         --header-row-bg-color: #222222;
+        --page-bg-color: #000;
     }
 }
 
 body {
     margin: 60px auto;
     width: 70%;
+    background-color: var(--page-bg-color);
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
