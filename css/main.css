@@ -1,6 +1,28 @@
+:root {
+    color-scheme: light dark;
+    --a-color: #999;
+    --footer-border-color: #d5d5d5;
+    --td-th-color: #dddddd;
+    --paragraph-text-color: #333;
+    --header-row-bg-color: #dddddd;
+    --page-bg-color: #FFFFFF;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --a-color: #f6f6f6;
+        --footer-border-color: #2a2a2a;
+        --td-th-color: #222222;
+        --paragraph-text-color: #fcfcfc;
+        --header-row-bg-color: #222222;
+        --page-bg-color: #000;
+    }
+}
+
 body {
     margin: 60px auto;
     width: 70%;
+    background-color: var(--page-bg-color);
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -14,7 +36,7 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
-    color: #999;
+    color: var(--a-color);
 }
 a:hover {
     text-decoration: underline;
@@ -31,13 +53,17 @@ h3 {
     font-size: 1.8em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
+h4 {
+    font-size: 1.2em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+}
 p {
     font-size: 1.3em;
     line-height: 1.5em;
-    color: #333;
+    color: var(--paragraph-text-color);
 }
 footer {
-    border-top: 1px solid #d5d5d5;
+    border-top: 1px solid var(--footer-border-color);
     font-size: .8em;
 }
 
@@ -55,6 +81,10 @@ ul li {
     font-size: 1.3em;
     line-height: 1.5em;
 }
+ul li ul li {
+    font-size: 1.0em;
+    line-height: 1.2em;
+}
 ol.posts li {
     font-size: 1.3em;
     line-height: 1.5em;
@@ -69,7 +99,7 @@ table {
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid var(--td-th-color);
     text-align: left;
     padding: 8px;
 }
@@ -79,4 +109,12 @@ td, th {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+tr.heading {
+    background-color: var(--header-row-bg-color);
+}
+
+th.heading {
+    background-color: var(--header-row-bg-color);
 }
