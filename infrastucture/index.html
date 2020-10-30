@@ -1,0 +1,69 @@
+---
+layout: default
+title: Infrastructure Teams - OSIsoft Engineering
+---
+<div class="blurb">
+
+<h1>Infrastructure Teams</h1>
+
+<h2>Purpose</h2>
+
+<p>Platform Infrastructure teams are responsible for developing and maintaining cross-cutting concerns within and across OSIsoft platforms including On-prem, OCS and Edge. The goal of the work completed by Platform Infrastructure teams is greater platform stability, better reuse of core technology, and more efficient feature development by program teams. To accomplish this, infrastructure teams take responsibility for infrastructure components, proactively identify when infrastructure work is needed, and help guide the design of infrastructure work by other teams identified within programs, ultimately taking responsibility of accepted work and acting as stewards of the platform as it evolves.</p>
+
+<h2>Roles and Responsibilities</h2>
+
+<p>Infrastructure teams design, develop, test, deploy, and support components that fall under the defined infrastructure work categories. At times, program teams may begin development of an infrastructure component and then transfer responsibility of accepted work to infrastructure teams. In this case, infrastructure teams will take full responsibility of the component, picking up where the program team left off in the development lifecycle. Program teams bear responsibility for replacing the components they developed with those maintained by infrastructure.</p>
+<p>Program teams may also make light enhancements to infrastructure components. In this case, it is the responsibility of infrastructure teams to ensure the changes being introduced meet design and implementation quality standards.</p>
+<p>The makeup of an infrastructure team is like other software development teams, including a mix of developers (Software Developer I/II, Senior Software Developer), an Engineering Manager, and a Staff Software Developer. An architect works with infrastructure teams, providing technical expertise, guidance, and help prioritizing the backlog. A program manager facilitates the work and coordinates infrastructure work with work planned in programs.</p>
+
+<h2>Operating Rules</h2>
+<p>Infrastructure teams follow standard company practices including:</p>
+<ul>
+    <li>3-week sprints</li>
+    <li>Team ceremonies (daily stand-up, planning, retrospective, sprint review)</li>
+    <li>Scrum-of-scrums</li>
+    <li>Features are defined and prioritized in the Infrastructure product backlog (Architecture will determine priority with input from infrastructure teams)</li>
+    <li>Teams pull work from the product backlog into their team backlogs</li>
+    <li>Teams maintain a Developer scorecard</li>
+</ul>
+<p>Depending on the effort, infrastructure teams work independently or as partners, at times working on the same effort while maintaining their autonomy as individual teams. Additionally, infrastructure teams can advise program teams when necessary.</p>
+<p>At times, program teams must implement infrastructure because infrastructure teams are unavailable, and the program requires the functionality. If it is determined that infrastructure teams will ultimately take responsibility of this functionality, infrastructure team member(s) should monitor the design and implementation. Ideally the program will have the bandwidth to develop infrastructure adequate for direct adoption by infrastructure teams. In other situations, programs will only have the bandwidth to support minimal, program specific implementation. At the time when the infrastructure teams assume responsibility for the functionality, they will assess the program team’s implementation and choose to adopt the codebase or develop from scratch. When the functionality is available from infrastructure, the program team(s) relying on the original implementation will have six months to adopt the new implementation, as a part of their technical debt budget.</p>
+<p>One of the primary responsibilities for infrastructure teams is to identify upcoming infrastructure work as early as possible. To achieve this, Infrastructure teams work with the Program Manager and Architect to identify and author the platform backlog.</p>
+
+<h2>Scope of Work</h2>
+<p>The breadth of infrastructure work can be extensive; therefore, the following factors are used to help determine if work can be identified as infrastructure:</p>
+<ul>
+    <li>Strategic (e.g. multi-master geo-distributed replication for Identity and System services in all clusters)•	Strategic (e.g. multi-master geo-distributed replication for Identity and System services in all clusters)</li>
+    <li>Cross-cutting (e.g. identity management and logging)</li>
+    <li>Cross-platform (e.g. generic HTTP client and identity management)</li>
+    <li>Reusable (e.g. metrics library)</li>
+    <li>Not-program specific (e.g. end-to-end, integration, and performance test frameworks)</li>
+</ul>
+<p>Although these attributes are a useful ‘litmus’ test, discussion between infrastructure teams and stakeholders (Product Management, Software Development Leadership and Architecture) may be required to help decide.</p>
+<p>Infrastructure work is organized into different categories. Some categories may be platform specific or cross-platform, but all work is evaluated to determine if it is suitable for cross-platform use. The expectation is that other categories may be identified in the future. Examples include but are not limited to:</p>
+<ul>
+    <li>Authentication</li>
+    <li>Multi-Tenancy Account and Account Scope Management (e.g., tenants and namespaces)</li>
+    <li>API Gateways</li>
+    <li>Provisioning</li>
+    <li>Centralized Configuration Management</li>
+    <li>Application Secrets Management</li>
+</ul>
+
+<h2>Engagement Model</h2>
+<p>When program teams engage with infrastructure teams, they work with their program team (Program Manager and Principal Software Developer) to explore options for program/infrastructure work and build an execution plan. Architecture and Program Management regularly meet to coordinate well-known and unplanned infrastructure dependencies across all programs.</p>
+<p>In addition, infrastructure teams:</p>
+<ul>
+    <li>Rely on a dedicated architect to review incoming requests from program teams and prioritize them in the platform backlog.</li>
+    <li>Schedule architecture reviews when significant functionality is added to the platform.</li>
+</ul>
+
+<h2>Platform Development Entities</h2>
+<p>The entities responsible for carrying out different platform development duties are as follows:</p>
+<ul>
+    <li>Infrastructure teams address strategic concerns for the platforms.</li>
+    <li>The Operations Guild provides platform services (subscription services, ADO, monitor and control dependencies) and supports program and infrastructure teams with optimizing operations, including CI/CD, VM use, cluster management.</li>
+    <li>Architecture provides design guidance for the platforms and directs the Infrastructure teams and Operations Guild.</li>
+</ul>
+
+</div><!-- /.blurb -->
