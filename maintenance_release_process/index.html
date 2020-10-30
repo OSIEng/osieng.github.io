@@ -1,0 +1,166 @@
+---
+layout: default
+title: Maintenance Release Process - OSIsoft Engineering
+---
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+	border: 1px solid;
+    width: 100%;
+}
+td, th {
+    border: 1px solid;
+    text-align: left;
+    padding: 8px;
+	width: 20%;
+}
+</style>
+
+<div class="blurb">
+
+<h1>Maintenance Release Process</h1>
+<p>Below is an overview of the release maintenance process. The complete process is documented under QM35 Maintenance Release Process in Azure Dev Ops and related Governance Guild blog posts in the OSIsoft intranet Sharepoint portal.</p>
+
+<h2>Process Overview</h2>
+<p>The maintenance process is initiated with the creation of a Bug work item, upon being reported by from any credible source. Those issues may be found internally, by a researcher, or by a customer who is acutely experiencing the problem. The Engineering department - every development team, every product, and every program - is partnered with our Support department and has adopted a single, streamlined maintenance process.</p>
+<p>Three Step Maintenance Process</p>
+<ol>
+	<li>Determine Criticality (Assess Severity)</li>
+	<li>Restore Customer Operations (Hot Fix, if needed)</li>
+	<li>Fix It Forever (Fix & Release Updates)</li>
+</ol>
+<img src="/images/Maintenance_1.PNG" style="width:100%">
+
+<h3>Determine Criticality</h3>
+<p>When bugs are reported, the Engineering Manager of the responsible Development Team documents the bug in a work item that is added to the Product Backlog, just as any other product work would be defined. Tag these work items with Maintenance. This is required by Engineering Program Managers for work management and reporting purposes.</p>
+<p>Once the bug item is created, its severity is assessed based on the actual and potential disruption the bug brings to customers’ business. The Technical Product Manager works with the Engineering Manager to determine the severity of the bug. Severity is set at one of four levels - Low, Medium, High, or Critical. Any bug deemed as Critical, will get the highest priority warranting immediate allocation of resources.</p>
+<p>Engineering and Support evaluate an issue on two common factors - impact and workaround availability. Engineering and Support's assessment of issues diverge on a third factor: affected customers. Implicitly, any call about an issue is already 100% likely, for that customer. Therefore, Support's third factor for criticality is Time Sensitivity.</p>
+<p>For Support, an issue is critical if:</p>
+<ul>
+	<li>It is high-impact. (impact at department or organization level, or issue is visible to our caller's customer base. The issue prevents the customer's ability to operate)</li>
+	<li>There is no feasible workaround.</li>
+	<li>It is time sensitive.</li>
+</ul>
+<p>For Engineering, we must consider the likelihood of the user base encountering the problem.</p>
+<p style="text-indent: 40px"><i>Criticality Score = ( Impact + Workaround Availability ) * Likelihood;</i></p>
+<p>Based on that formula, work items are marked with the following severity:</p>
+<ul>
+	<li>Critical (0-2)</li>
+	<li>High (3-4)</li>
+	<li>Medium (6-8)</li>
+	<li>Low (9-16)</li>
+</ul>
+<img src="/images/Maintenance_2.PNG" style="width:100%">
+
+<h4>Scoring System</h4>
+<p>Score each of the following factors on the scale shown. Then determine the Criticality Score using the given formula, and assign a Severity Level to the bug in the relevant Backlog Items.</p>
+
+<p><strong>Impact (0-3)</strong> – The extent of the impact to customers’ data infrastructure if they hit the bug</p>
+<table>
+	<tr class="heading">
+		<th>High (0)</th>
+		<th>Medium (1)</th>
+		<th>Low (3)</th>
+	</tr>
+	<tr>
+		<td>Crash</td>
+		<td>Performance</td>
+		<td>Usability</td>
+	</tr>
+	<tr>
+		<td>Deadlock</td>
+		<td>Efficiency</td>
+		<td>Documentation</td>
+	</tr>
+	<tr>
+		<td>Wrong data (collected or calculated)</td>
+		<td>Scalability</td>
+		<td>Consistency</td>
+	</tr>
+	<tr>
+		<td>Wrong search results</td>
+		<td>Calculation/Logic</td>
+		<td>Workflow</td>
+	</tr>
+	<tr>
+		<td>Data loss</td>
+		<td></td>
+		<td>Grammatical</td>
+	</tr>
+	<tr>
+		<td>Archive corruption</td>
+		<td></td>
+		<td>Cosmetics</td>
+	</tr>
+	<tr>
+		<td>Data integrity</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Exploitation of a security vulnerability</td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+<p><strong>Remediation Level (0-1)</strong> – Availability of a workaround that lowers or eliminates the probability or impact of the software bug, without any fix/change to the code</p>
+<ul>
+	<li>A “feasible” workaround is available <strong>(1)</strong></li>
+	<li>No workaround is available <strong>(0)</strong></li>
+</ul>
+
+<p><strong>Likelihood (1-4)</strong> – The indicator of how probable and easy it is for the users to hit the bug. It will be presented as the number/percentage of customers who have hit the bug already (associated number of support cases) or are anticipated to hit it in the future (anticipated behavior of a new OSIsoft technology). This could be estimated across all verticals or could be focused on one specific industry.</p>
+<ul>
+	<li>More than 95% <strong>(1)</strong></li>
+	<li>More than 2/3 <strong>(2)</strong></li>
+	<li>More than 1/3 <strong>(3)</strong></li>
+	<li>Less than 1/3 <strong>(4)</strong></li>
+</ul>
+
+<h4>Instrumented Development Builds</h4>
+<p>Occassionally, understanding the root cause of an issue is not possible without providing an instrumented development build to a user. This Maintenance Release Process allows for these builds when assessing severity or developing a hot fix. These builds may be distributed on a limited basis to users in accordance with QM04 Product Release Types & Versioning.</p>
+<p>When sharing an instrumented development build with a customer, QT07 Release Artifact Register must be completed and sent to the Engineering Leadership Team and Governance Guild. The former would like to be aware of potentially critical issues and the reason we need to send this. The Governance Guild needs evidence of what builds were sent out to customers.</p>
+
+<h3>Restore Customer Operations</h3>
+<p>Engineering has structured the development of all products to be able to quickly address critical problems. Ideally, we are able to produce a fix quickly and make that fix generally available just as quickly. Practically, we often need to work with customers to determine the root cause and provide them with a Hot Fix sooner than an update can be made generally available.</p>
+<p>Hot Fixes are Limited-Availability releases that are made when:</p>
+<ol>
+	<li>Customer Operations are (or will be) acutely affected by a critical issue​​​​​​​.</li>
+	<li>Issue is in a GA product (no Hot Fix for Internal or Limited Availability Releases)</li>
+	<li>A Hot Fix can be provided significantly quicker than a Generally Available update could.</li>
+</ol>
+<img src="/images/Maintenance_3.PNG" style="width:100%">
+<p>Due to the critical nature of the problem and impact on customer operations, the Governance Guild does not require a full release submittal or proof of compliance to all procedures. However, all Hot Fixes and Instrumented Development Builds are subject to all Governance Guild Policies. Evidence of compliance with those policies is necessary via QT07 Release Artifact Register.</p>
+<p>Once a Hot Fix is completed, work immediately begins on General Availability releases for all actively developed versions, which typically are the main/master branch, the current version, and any long-term serviced versions, such as those included in the PI System for Critical Operations. The main/master branch will release the fix with the next General Availability product release (e.g., a feature-rich, new version). For the current and serviced versions, the fix is made as a General Availability Update (e.g., a Revision, Patch, or Service Pack).</p>
+
+<h3>Fix It Forever</h3>
+<p>Our final responsibility is to ensure that no other customers experience this problem. Engineering is committed to fixing critical issues as Job 1. Customers are entitled to a fix for critical issues, now. We do not ask them to wait for an upcoming feature release to get problems resolved. Any issue that receives a Hot Fix, or has been deemed Critical by Engineering (using the Criticality Scoring System), will be fixed immediately in all actively developed versions of a product - typically the most recent release and any version Product Management has included in the PI System for Critical Operations. This must be an update to all actively developed General Availability Releases.</p>
+<img src="/images/Maintenance_4.PNG" style="width:100%">
+
+<h4>Critical Severity Issues</h4>
+<p>The Engineering Manager (of the responsible team), Technical Product Manager, and a Staff Developer create the work items needed to fix the issue and release the affected software. Specific, written consideration must be given for how this fix affects related products – and the need to update and release those products.</p>
+<p>The Engineering Manager, Technical Product Manager, and Staff Developer for the related products must create work items in the Product Backlog for those products.</p>
+<p>Once the all the work for all the affected products is defined, all the work is estimated (in story points) by the responsible Development Teams. Those estimates are converted to developer-hours based on the Development Teams’ established velocity.</p>
+<p>When the estimate is completed, an executive summary of the problem, the required work, and the estimate of that work is provided to Engineering Program Management via QT08 Critical Issue Report.</p>
+<p>Implementation of critical fixes takes priority over meeting a sprint goal, but for large estimates, it may be necessary to take a more measured approach. Engineering Program Management will consult with the Engineering Leadership Team and provide direction on whether the responsible development teams will begin work immediately, thereby cancelling and re-planning the current sprint, or if the current sprint should continue and the work for the critical fix should be implemented as part of an “Emergency Program.”</p>
+
+<h4>Non-Critical Severity Issues</h4>
+<p>For all non-critical bugs, the work is defined and estimated the same as all other work. Once that work is defined, the Engineering Manager, Technical Product Manager, and a Staff Developer decide on the priority of the fix.</p>
+<p>Implementation of non-critical bugs is done in the normal course of work. This maintenance process does not mandate when Updates are developed and released. This is left to the discretion of Product Management with courteous inclusion of Program Management and other Software Development Leadership. Every engineering Program budgets development time and resources for technical improvement, technical debt reduction, and fixing non-critical bugs.</p>
+
+<h2>Tracking Development of Product Updates & Hot Fixes</h2>
+<p>We're leveraging the ADO existing hierarchy to see how well we're aligning our actions with our priorities. With a few changes, we can use an evergreen Program to get the insight we need.</p>
+<p>A placeholder Program, PI System Updates & Hot Fixes (No Program), will live alongside usual programs in the Program Backlog. This familiar structure allows management to explore what's in development using existing ADO and Power BI dashboards, queries, reports & tools.</p>
+<p>Product Updates & Hot Fixes are customer-facing. Accordingly, we're adopting the marketing product segmentation for the PI System as themes for this new Program.</p>
+<p>For example:</p>
+<ul>
+	<li>Maintenance Release 128911: PI AF 2018 SP3 Patch 3</li>
+	<li>Maintenance Release 148089: PI Interface for FactoryTalk Batch | v4.1.10</li>
+	<li>Maintenance Release 122679: RtReports 4.1 Patch 3 | v4.1.3</li>
+</ul>
+<img src="/images/Maintenance_5.PNG" style="width:100%">
+<p>A new work item type, "Maintenance Release", has been added to ADO. It lives at the same hierarchy level as Epics, but exclusively in Product Backlogs, while Epics continue to live in Program Backlog.</p>
+
+</div>

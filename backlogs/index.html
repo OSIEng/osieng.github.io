@@ -1,0 +1,84 @@
+---
+layout: default
+title: Backlogs - OSIsoft Engineering
+---
+
+<div class="blurb">
+
+<h1>Backlogs</h1>
+
+<h2>Overview</h2>
+
+<p>There are multiple backlogs with different purposes.</p>
+
+<ul>
+	<li><strong>Product Backlog</strong> - A collection of Product Features, Bugs, & Technical Investment/Debt</li>
+	<li><strong>Development Team Backlog</strong> – A prioritized list of PBIs & Bugs that each development team has been assigned to complete; and team-specific work that doesn’t correlate to a codebase, component, or product (e.g., training, onboarding)</li>
+	<li><strong>Program Backlog</strong> – A hierarchical view of active, in-progress Programs (developing now); and another view of things that are not funded/active (developing next, and researching future)</li>
+</ul>
+
+<p>Having these different backlogs allows for a separation of concern based on one’s role and workflow. In Azure DevOps, this is all controlled by Area Path and assignment of (Azure DevOps) teams to those area paths. It is critical that product and program Area Paths are not assigned to development teams, and vice versa.</p>
+
+<h2>Program Backlogs</h2>
+
+<p>Program Backlogs are hierarchical views of active, in-progress Programs (developing now); and another set of views of things that are not funded/active (developing next, and researching future).</p>
+
+<h3>Active Programs</h3>
+
+<p>For active programs, the Program Backlog is managed by an Engineering Program Manager. They are responsible for, in collaboration with Strategic Product Managers (SPM) and Principal Software Developers (PSD) or Software Architect, driving a specific program to completion by coordinating that program’s needs across the program’s development teams. The Program Backlog allows them to organize Epics into Milestones (“Release Themes” in Azure DevOps), and Milestones into a Program. Each EPM has their own Program Backlog, which may contain more than one Program work item.</p>
+<p>A special program exists in the Program Management backlog for Product Updates & Hotfixes. This backlog allows us to track Maintenance Releases and Hotfixes for products outside of active, planned programs.</p>
+<p>Having a Program Backlog that is separate from the work backlogs (i.e., Product & Development Team Backlogs) allows an Engineering Program Manager to focus Technical Product Managers and Development Teams to do the work necessary to solve the problems the Program was intended to solve. It helps visualize the progress towards those goals and makes it easier to assign available work to available Development Teams.</p>
+
+<div style="width:95%; display:block; margin-left:auto; margin-right:auto">
+	<img src="/images/Backlogs_1.PNG">
+	<br>Navigating to Active Programs. This Program Backlog contains Program Work Items that a Program Team (EPM, SPM, PSD/Architect) uses to plan the execution of a program
+	<br>
+
+	<img src="/images/Backlogs_2.PNG">
+	<br>Using a Program Backlog to monitor progress that Development Teams are making on Product Features in service of accomplishing the Epics and Milestones (Release Themes)
+	<br>
+</div>
+
+<h3>Future Programs</h3>
+
+<p>For future programs, the Program Backlog is managed by the group of Strategic Product Managers. They are responsible for collecting ideas that represent customer problems. Those ideas are collected in Epic work items and sometimes organized into tentative placeholder ("Attic") programs. A Program Brief may be written that covers some of those Epics and Programs and, if approved and funded, will become an active Program managed by an Engineering Program Manager.</p>
+<p>Having a Future Program Backlog that is separate from Active Program Backlogs allows Strategic Product Managers to gather, prioritize, and refine ideas for solutions to customer problems without expanding scope of active programs.</p>
+
+<div style="width:95%; display:block; margin-left:auto; margin-right:auto">
+	<img src="/images/Backlogs_3.PNG">
+	<br>Epics are collected in a special Program Backlog for consideration in future Programs
+	<br>
+</div>
+
+<h2>Product Backlogs</h2>
+
+<p>A Product Backlog is a collection of Features, Bugs & Technical Investment/Debt. It is a prioritized list of Features that are in-development now, and may be developed in the future. This backlog is managed by a Technical Product Manager (TPM). They, in collaboration with Engineering Managers (EM) and Staff Developers, are responsible for the content of the Feature work items, prioritization of the features that are in-development now and may be developed in the future.</p>
+<p>Having a Product Backlog that is separate from a Development Team’s Backlog allows the TPM to see what work is being done on the product, even if multiple Development Teams are working on it. To accomplish this in Azure DevOps, the Feature’s Area Path is always set to the product (in this example, engineering\Products\PI Web API). The backlog items (PBIs & Bugs) are assigned to the Development Team when those Features are ready to be developed.</p>
+
+<div style="width:95%; display:block; margin-left:auto; margin-right:auto">
+	<img src="/images/Backlogs_4.PNG">
+	<br>Navigating to the PI Web API Product Backlog
+	<br>
+
+	<img src="/images/Backlogs_5.PNG">
+	<br>Product managers can see multiple development teams working on one product
+	<br>
+</div>
+
+<h2>Development Team Backlogs</h2>
+
+<p>A Development Team Backlog is a prioritized list of Backlog Items (PBIs & Bugs) that each development team has been assigned to complete; and team-specific work that doesn’t correlate to a codebase, component, or product (e.g., training, onboarding).</p>
+<p>This backlog is managed by an Engineering Manager. They, in collaboration with Staff Developers and Technical Product Managers, are responsible for the content of the Backlog Items, prioritization of those Backlog Items, and ensuring that they are implemented within the Agile process (i.e., items are carefully assigned to a Sprint during Sprint Planning, are worked on throughout the Sprint, and completed by the end of the Sprint).</p>
+<p>Having a Development Team Backlog that is separate from a Product Backlog allows the Development Team to maintain metrics on their team (e.g., Velocity, Cycle Time, Sprint Burndowns) and have clear direction on the scope of work they are expected to complete. It frees the team from having to manage Product requirements, work, and bugs in the same place as their team’s work. It focuses a team on what their responsibilities are without the temptation of expanding scope of a product’s feature set that may not align with current department and company goals and objectives.</p>
+<p>A Development Team Backlog is handy for enabling teams to solve problems across multiple products or layers of our product stack. It allows Program Managers to assign work for more than one product without having the team work in multiple backlogs or projects – which destroys a team’s ability to have a single, linearly prioritized list of work.</p>
+
+<div style="width:95%; display:block; margin-left:auto; margin-right:auto">
+	<img src="/images/Backlogs_6.PNG">
+	<br>Navigating to the Denali Team's Development Team Backlog
+	<br>
+	<img src="/images/Backlogs_7.PNG">
+	<br>Bar Team working on PI Web API & PI Vision in one Development Team Backlog
+	<br>
+</div>
+
+</div>
