@@ -1,0 +1,229 @@
+---
+layout: default
+title: Program Backlog - OSIsoft Engineering
+---
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+	border: 1px solid;
+    width: 100%;
+}
+td, th {
+    border: 1px solid;
+    text-align: left;
+    padding: 8px;
+	width: 20%;
+}
+</style>
+
+<div class="blurb">
+
+<h1>Program Backlog</h1>
+
+<h2>Working with the Program Backlog</h2>
+
+<h3>Terms</h3>
+<img src="/images/ProgramBacklog_1.PNG" style="width:100%">
+
+<h2>Create the Program</h2>
+<ul>
+	<li>Create a Program work item in the Program Management backlog.</li>
+	<li>Put a link to the Program Brief in the Description field.</li>
+	<li>Form a small team for Discovery Phase.</li>
+	<li>Work with Principal Software Developer (PSD) to develop basic system design.</li>
+</ul>
+
+<h3>Program States</h3>
+<table>
+	<tr class="heading">
+		<th>State</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>Draft</td>
+		<td>Program brief is being drafted and reviewed internally before submission.</td>
+	</tr>
+	<tr>
+		<td>Proposed</td>
+		<td>Brief is written but not yet approved by ELT, possibly adjusting the brief based on ELT feedback.</td>
+	</tr>
+	<tr>
+		<td>Approved</td>
+		<td>The ELT approved the program brief, but no program team (EPM, SPM, Principal) assigned yet.</td>
+	</tr>
+	<tr>
+		<td>Unstaffed</td>
+		<td>Program team is in place, but no teams assigned. There is ongoing analysis among Tech Lead, EPM, and SPM.</td>
+	</tr>
+	<tr>
+		<td>Discovery</td>
+		<td>Program team and development teams are designing high level software deliverables and milestones with rough estimates.</td>
+	</tr>
+	<tr>
+		<td>Committed</td>
+		<td>Program is in progress; development teams are actively working on milestones.</td>
+	</tr>
+	<tr>
+		<td>Done</td>
+		<td>Program completed - acceptance criteria met.</td>
+	</tr>
+	<tr>
+		<td>Removed</td>
+		<td>Program ended, but not through completion of all acceptance criteria.</td>
+	</tr>
+</table>
+
+<h3>Program Template</h3>
+
+<ul>
+	<li>Program Goal</li>
+	<ul>
+		<li>The goal of the program is to...</li>
+	</ul>
+	<li>Program Links</li>
+	<ul>
+		<li>Latest Approved Program Brief: URL</li>
+		<li>Key Discovery Phase Documents:</li>
+		<li>Name: URL</li>
+		<li>Name: URL</li>
+		<li>Shared Program Folder: URL</li>
+		<li>Program Overview Slide Deck: URL</li>
+	</ul>
+	<li>Targeted Market Launch Dates</li>
+	<ul>
+		<li>Lighthouse Release: Approximate Date Range and/or Milestone</li>
+		<li>General Availability Release: Approximate Date Range and/or Milestone</li>
+	</ul>
+	<li>Program Template<br>
+		<img src="/images/ProgramTemplate.PNG" style="width:100%">
+	</li>
+</ul>
+
+<h2>Create Themes (Milestones)</h2>
+<ul>
+	<li>Each Theme represents a delivery or milestone.</li>
+	<li>Most milestones should be sufficiently featureful, stable, and complete to potentially ship and market.</li>
+	<li>The title of themes should be in the format "M#: Description [Release Type](optional)", e.g. "M5: UoM Support [GA]" where:</li>
+	<ul>
+		<li>M#: The milestone number</li>
+		<li>Description: A short, human-readable description of the theme/milestone</li>
+		<li>Release Type: Optional suffix, enclosed by square brackets, to indicate the type of release.</li>
+		<ul>
+			<li>UIT: User Integration Testing</li>
+			<li>Lighthouse: Lighthouse Release</li>
+			<li>GA: General Availability</li>
+		</ul>
+	</ul>
+</ul>
+
+<h3>Release Theme Template</h3>
+
+<ul>
+	<li>Release Theme Goals and Intentions</li>
+	<ul>
+		<li>The intent of this release theme is to enable customers to...</li>
+		<li>Why?</li>
+	</ul>
+	<li>Release Theme Acceptance Criteria</li>
+	<ul>
+		<li>At the end of this theme, an user should be able to...</li>
+	</ul>
+	<li>Assumptions / Comments / Questions</li>
+	<li>Release Theme Demo</li>
+	<li>Target Completion Date</li>
+	<ul>
+		<li>The target completion date / milestone of this release theme is: &lt;Estimated Month Year&gt; and/or &lt;Milestone like PI World&gt;</li>
+	</ul>
+	<li>Theme Template<br>
+		<img src="/images/ThemeTemplate.PNG" style="width:100%">
+	</li>
+</ul>
+
+<h2>Create Epics</h2>
+<ul>
+	<li>Epics are potentially shippable/deployable (i.e. tested, documented, and complete) deliverables that define the Program.</li>
+	<li>With technical guidance, develop a collection of Epics.</li>
+	<li>An Epic should encompass a cohesive, coherent deliverable such that it can be moved easily between milestones, accounting for significant dependencies.</li>
+	<li>Infrastructure (Technically-Driven) Epics should be avoided.</li>
+	<ul>
+		<li>Epics should be user- and persona-driven.</li>
+		<li>Non-functional requirements (e.g. performance, scale, security, usability, maintainability), technical work (e.g. integration testing, package upgrades, refactoring, environment setup, CI/CD pipelines) and documentation (e.g. user guide and release documentation) should be incorporated into epics that they enable.</li>
+	</ul>
+	<li>UI Epics should be avoided unless backend and UI work realistically provides independent value.</li>
+</ul>
+
+<h3>Epic Template</h3>
+
+<ul>
+	<li>Goal</li>
+	<ul>
+		<li>The goal of this EPIC is to...</li>
+		<li>Why?</li>
+	</ul>
+	<li>Key Personas</li>
+	<ul>
+		<li>Name - Title: Description</li>
+	</ul>
+	<li>User Stories</li>
+	<ul>
+		<li>As a Sr. Process Engineer, Carl wants to ... SO THAT...</li>
+		<li>As a Sr. Process Engineer, Carl wants to ... SO THAT...</li>
+	</ul>
+	<li>Assumptions / Comments / Questions</li>
+	<li>Epic Template<br>
+		<img src="/images/EpicTemplate.PNG" style="width:100%">
+	</li>
+</ul>
+
+<h3>Schedule the Epics into Themes</h3>
+
+<ul>
+	<li>Core functionality can be delivered before extended functionality.</li>
+	<li>Description: “At the end of this Theme, the customer will be able to….”</li>
+	<li>Epics represent a demonstrable piece of functionality (e.g. vertical slice of a system) that is potentially shippable. In contrast, Themes represent an aggregate of Epics that satisfy a specific market scenario. When Themes are complete, they can be showcased during a Lighthouse engagement or released to a customer.</li>
+	<li>These aggregations will change as the Program matures.</li>
+</ul>
+
+<h2>Create Features under Each Epic</h2>
+
+<p>Features mark the hand off from the Program team to the Development team. The Technical Product Manager (TPM), Engineering Manager (EM), and Staff Developer collaborate to break down Epics into Features.</p>
+<p>Features are created and remain in the product backlog, if an appropriate product backlog exists; otherwise they can remain in the program backlog.</p>
+
+<h3>Feature Template</h3>
+<ul>
+	<li>User Stories</li>
+	<ul>
+		<li>As a Sr. Process Engineer, Carl wants to ... SO THAT...</li>
+	</ul>
+	<li>Background</li>
+	<ul>
+		<li>Provide any additional information.</li>
+	</ul>
+	<li>Out of Scope</li>
+	<ul>
+		<li>Explicitly define what is not part of the feature.</li>
+	</ul>
+	<li>Timeline Driver</li>
+	<ul>
+		<li>Define when the feature needs to be complete, for example, PI World SF 2020, and the reasoning for the timeline date. The target date should be used with this to indicate the expected Feature completion date.</li>
+	</ul>
+	<li>Dependencies/Stakeholders</li>
+	<li>UserVoice Ideas</li>
+	<ul>
+		<li>Links to the UserVoice ideas we’re aiming to tackle with the feature.</li>
+	</ul>
+	<li>Considerations and Questions</li>
+	<li>Feature Template<br>
+		<img src="/images/FeatureTemplate.PNG" style="width:100%">
+	</li>
+</ul>
+
+<h2>Backlog Items (actual dev work)</h2>
+<ul>
+	<li>Features are often implemented by a single development team.</li>
+	<li>The development team authors Backlog Items from Features, with assistance from TPM as necessary.</li>
+</ul>
+<img src="/images/ProgramBacklog_2.PNG" style="width:100%">
+
+</div>
