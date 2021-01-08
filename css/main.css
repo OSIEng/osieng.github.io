@@ -89,10 +89,12 @@ ul.posts li {
 ul li {
     font-size: 1.3em;
     line-height: 1.5em;
+    color: var(--paragraph-text-color);
 }
 ul li ul li {
     font-size: 1.0em;
     line-height: 1.2em;
+    color: var(--paragraph-text-color);
 }
 ol.posts li {
     font-size: 1.3em;
@@ -101,10 +103,12 @@ ol.posts li {
 ol li {
     font-size: 1.3em;
     line-height: 1.5em;
+    color: var(--paragraph-text-color);
 }
 ol li ul li {
     font-size: 1.0em;
     line-height: 1.2em;
+    color: var(--paragraph-text-color);
 }
 em {
     font-size: 1.3em;
