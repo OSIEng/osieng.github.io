@@ -13,7 +13,7 @@ title: OCS Operations Overview - OSIsoft Engineering
     <p>The Operations Guild's primary role is responsibility over the tools and systems that Engineering needs to perform its function. The Guild is also responsible for operation of Azure resources used for development and as the platform for OCS. The list below cites some specific platforms and technologies that it includes.</p>
     
     <ul>
-        <li><p>Azure DevOps</p>
+        <li>Azure DevOps
             <ul>
                 <li>Platform administration</li>
                 <li>Project migration and consolidation</li>
@@ -29,27 +29,15 @@ title: OCS Operations Overview - OSIsoft Engineering
         <li>Pipelines
             <ul>
                 <li>Pipeline Alignment – Build / Push / Deploy</li>
+                Note that pipeline responsibilities are shared between operations and development teams. Operations is responsible for identifying and enforcing use of best practices. Development teams are responsible for implementing and maintaining pipelines supporting development and deployment of individual services. Further it is incumbent upon development teams to comply with best practices as identified by Operations.
             </ul>
         </li>
-    </ul>
-    
-    <blockquote>
-    <p>Note that pipeline responsibilities are shared between operations and development teams. Operations is responsible for identifying and enforcing use of best practices. Development teams are responsible for implementing and maintaining pipelines supporting development and deployment of individual services. Further it is incumbent upon development teams to comply with best practices as identified by Operations.</p>
-    </blockquote>
-    
-    <ul>
-        <li><p>Development Environments – the cloud resources shared across development teams</p>
+        <li>Development Environments – the cloud resources shared across development teams
             <ul>
                 <li>Improved isolation and auditing</li>
+                Operations is responsible for identifying issues and supporting resolution of those issues. Frequently this will require the support of development teams. For example, Operations identified sharing the Integration Cluster identity database in read-only mode as a problem. Operations will notify the team with codebase responsibility, and that team should provide a resolution in a reasonable time.
             </ul>
         </li>
-    </ul>
-    
-    <blockquote>
-    <p>Operations is responsible for identifying issues and supporting resolution of those issues. Frequently this will require the support of development teams. For example, Operations identified sharing the Integration Cluster identity database in read-only mode as a problem. Operations will notify the team with codebase responsibility, and that team should provide a resolution in a reasonable time.</p>
-    </blockquote>
-    
-    <ul>
         <li>Platform Maintenance
             <ul>
                 <li>Limited Lifetime Artifacts (rolling certificates, keys, …)</li>
@@ -85,17 +73,17 @@ title: OCS Operations Overview - OSIsoft Engineering
     <p>Feature Development Teams are responsible for the operation and health of services and pages they deploy to any environment of OSIsoft Cloud Services (production, staging, …). They consume frameworks and libraries from the Infrastructure teams, and they use tooling from the Operations Guild. The services for which they are responsible are assigned by the Engineering Department Leads or implied based on their current Program assignments.</p>
     
     <ul>
-        <li><p>Service Performance and Heath Monitoring</p>
+        <li>Service Performance and Heath Monitoring
             <ul>
-                <li><p>Alerts</p></li>
-                <li><p>Ensure Service Health</p></li>
+                <li>Alerts</li>
+                <li>Ensure Service Health</li>
             </ul>
         </li>
-        <li><p>Incidence Response (Platform Health and Tooling Validation)</p>
+        <li>Incidence Response (Platform Health and Tooling Validation)
             <ul>
-                <li><p>Disaster Recovery and Business Continuity ownership relative to the services they maintain.</p></li>
-                <li><p>Beyond monitoring, dev teams are expected to push “hotfix” releases to resolve performance or other operational issues.</p></li>
-                <li><p>Troubleshooting when service specific issues arise, e.g., be stewards of alerts and notifications coupled to their services.</p></li>
+                <li>Disaster Recovery and Business Continuity ownership relative to the services they maintain.</li>
+                <li>Beyond monitoring, dev teams are expected to push “hotfix” releases to resolve performance or other operational issues.</li>
+                <li>Troubleshooting when service specific issues arise, e.g., be stewards of alerts and notifications coupled to their services.</li>
             </ul>
         </li>
     </ul>
