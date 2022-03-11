@@ -20,7 +20,7 @@ td, th {
 <div class="blurb">
 
 <h1>Maintenance Release Process</h1>
-<p>Below is an overview of the release maintenance process. The complete process is documented under QM35 Maintenance Release Process in Azure Dev Ops and related Governance Guild blog posts in the Operations Information R&D Sharepoint intranet portal.</p>
+<p>Below is an overview of the release maintenance process. The complete process is documented under QM35 Maintenance Release Process in Azure Dev Ops.</p>
 
 <h2>Process Overview</h2>
 <p>The maintenance process is initiated with the creation of a Bug work item, upon being reported by from any credible source. Those issues may be found internally, by a researcher, or by a customer who is acutely experiencing the problem. The Operations Information R&D department - every development team, every product, and every program - is partnered with our Support department and has adopted a single, streamlined maintenance process.</p>
@@ -121,7 +121,7 @@ td, th {
 
 <h4>Instrumented Development Builds</h4>
 <p>Occassionally, understanding the root cause of an issue is not possible without providing an instrumented development build to a user. This Maintenance Release Process allows for these builds when assessing severity or developing a hot fix. These builds may be distributed on a limited basis to users in accordance with QM04 Product Release Types & Versioning.</p>
-<p>When sharing an instrumented development build with a customer, QT07 Release Artifact Register must be completed and sent to the Engineering Leadership Team and Governance Guild. The former would like to be aware of potentially critical issues and the reason we need to send this. The Governance Guild needs evidence of what builds were sent out to customers.</p>
+<p>When sharing an instrumented development build with a customer, QT07 Release Artifact Register must be completed and sent to the Business Unit Leadership Team and Product Quality Owners. The former would like to be aware of potentially critical issues and the reason we need to send this. Product Quality Owners need evidence of what builds were sent out to customers.</p>
 
 <h3>Restore Customer Operations</h3>
 <p>Operations Information R&D has structured the development of all products to be able to quickly address critical problems. Ideally, we are able to produce a fix quickly and make that fix generally available just as quickly. Practically, we often need to work with customers to determine the root cause and provide them with a Hot Fix sooner than an update can be made generally available.</p>
@@ -132,7 +132,7 @@ td, th {
 	<li>A Hot Fix can be provided significantly quicker than a Generally Available update could.</li>
 </ol>
 <img src="/images/Maintenance_3.PNG">
-<p>Due to the critical nature of the problem and impact on customer operations, the Governance Guild does not require a full release submittal or proof of compliance to all procedures. However, all Hot Fixes and Instrumented Development Builds are subject to all Governance Guild Policies. Evidence of compliance with those policies is necessary via QT07 Release Artifact Register.</p>
+<p>Due to the critical nature of the problem and impact on customer operations, Product Quality Owners do not require a full release submittal or proof of compliance to all procedures. However, all Hot Fixes and Instrumented Development Builds are subject to all R&D Policies. Evidence of compliance with those policies is necessary via QT07 Release Artifact Register.</p>
 <p>Once a Hot Fix is completed, work immediately begins on General Availability releases for all actively developed versions, which typically are the main/master branch, the current version, and any long-term serviced versions, such as those included in the PI System for Critical Operations. The main/master branch will release the fix with the next General Availability product release (e.g., a feature-rich, new version). For the current and serviced versions, the fix is made as a General Availability Update (e.g., a Revision, Patch, or Service Pack).</p>
 
 <h3>Fix It Forever</h3>
@@ -144,7 +144,7 @@ td, th {
 <p>The Engineering Manager, Technical Product Manager, and Staff Developer for the related products must create work items in the Product Backlog for those products.</p>
 <p>Once the all the work for all the affected products is defined, all the work is estimated (in story points) by the responsible Development Teams. Those estimates are converted to developer-hours based on the Development Teams’ established velocity.</p>
 <p>When the estimate is completed, an executive summary of the problem, the required work, and the estimate of that work is provided to Engineering Program Management via QT08 Critical Issue Report.</p>
-<p>Implementation of critical fixes takes priority over meeting a sprint goal, but for large estimates, it may be necessary to take a more measured approach. Engineering Program Management will consult with the Engineering Leadership Team and provide direction on whether the responsible development teams will begin work immediately, thereby cancelling and re-planning the current sprint, or if the current sprint should continue and the work for the critical fix should be implemented as part of an “Emergency Program.”</p>
+<p>Implementation of critical fixes takes priority over meeting a sprint goal, but for large estimates, it may be necessary to take a more measured approach. Engineering Program Management will consult with the Business Unit Leadership Team and provide direction on whether the responsible development teams will begin work immediately, thereby cancelling and re-planning the current sprint, or if the current sprint should continue and the work for the critical fix should be implemented as part of an “Emergency Program.”</p>
 
 <h4>Non-Critical Severity Issues</h4>
 <p>For all non-critical bugs, the work is defined and estimated the same as all other work. Once that work is defined, the Engineering Manager, Technical Product Manager, and a Staff Developer decide on the priority of the fix.</p>
