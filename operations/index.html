@@ -6,77 +6,35 @@ title: AVEVA Data Hub Operations Overview - AVEVA Operations Information R&D
 
     <h1>Summary</h1>
 
-    <p>There are three groups -- Operations Guild, Infrastructure Development Teams, and Feature Development Teams -- that build and maintain AVEVA Data Hub. This platform consists of the Service Fabric, Azure resources, and the supporting core services and libraries. Responsibilities are split across the three groups as follows. The Operations Guild helps automate DevOps tooling, manage Azure resources, and controls access to the cluster. Infrastructure teams develop core services, frameworks, and libraries to support the platform and microservices. Development teams maintain the health and performance of the services they are responsible for. The Software Development Department Leads maintain the assignments of teams to services/codebases.</p>
-    <p>An informal group identified as the Service Operations Experts Team (formerly the Service Operations Core Group), consisting of five or six individuals from Operations, Infrastructure, and Feature teams, form a committee dedicated to operating AVEVA Data Hub (ADH). They identify and support efforts to assure and maintain stable cluster operations and coordinate with Architecture and Program to assure efforts requiring development teams happen in a coordinated and timely manner.</p>
+    <p>Responsibility for building and maintaining AVEVA Data Hub is shared between the software development teams with codebase responsibilities for ADH core services and the Service Operations team. This platform consists of the Service Fabric, Azure resources, and the supporting core services and libraries.</p>
     
-    <h1>Operations Guild</h1>
-    <p>The Operations Guild's primary role is responsibility over the tools and systems that AVEVA Operations Information R&D needs to perform its function. The Guild is also responsible for operation of Azure resources used for development and as the platform for ADH. The list below cites some specific platforms and technologies that it includes.</p>
+    <h1>Service Operations</h1>
+    <p>The Service Operations team is a product-focused team, responsible for continued operations and uptime of the environment and substrate of AVEVA Data Hub. Specifically, this includes the following responsibilities:</p>
     
     <ul>
-        <li>Azure DevOps
-            <ul>
-                <li>Platform administration</li>
-                <li>Project migration and consolidation</li>
-                <li>Ongoing improvement, support, and training</li>
-            </ul>
-        </li>
-        <li>Containers and Orchestration
-            <ul>
-                <li>Orchestration - (Kubernetes &amp; Fabric), Cluster/Virtual Machine/Node, and Containers</li>
-                <li>Containers – Docker</li>
-            </ul>
-        </li>
-        <li>Pipelines
-            <ul>
-                <li>Pipeline Alignment – Build / Push / Deploy</li>
-                Note that pipeline responsibilities are shared between operations and development teams. Operations is responsible for identifying and enforcing use of best practices. Development teams are responsible for implementing and maintaining pipelines supporting development and deployment of individual services. Further it is incumbent upon development teams to comply with best practices as identified by Operations.
-            </ul>
-        </li>
-        <li>Development Environments – the cloud resources shared across development teams
-            <ul>
-                <li>Improved isolation and auditing</li>
-                Operations is responsible for identifying issues and supporting resolution of those issues. Frequently this will require the support of development teams. For example, Operations identified sharing the Integration Cluster identity database in read-only mode as a problem. Operations will notify the team with codebase responsibility, and that team should provide a resolution in a reasonable time.
-            </ul>
-        </li>
-        <li>Platform Maintenance
-            <ul>
-                <li>Limited Lifetime Artifacts (rolling certificates, keys, …)</li>
-                <li>Platform Upgrades (Service Fabric runtime, etc.)</li>
-            </ul>
-        </li>
-        <li>Cloud Platform Governance
-            <ul>
-                <li>Access Control (Azure SF subscription and cluster admin, certificates, LastPass, etc.)</li>
-                <li>Privileged Identity Management (PIM) configuration and management</li>
-                <li>"Best Practices" on containerization and resources, e.g. dev workflow, naming conventions, etc.</li>
-            </ul>
-        </li>
-        <li>ADH Cluster Governance
-            <ul>
-                <li>Access Control (ADH cluster operator, support, admin...)</li>
-            </ul>
-        </li>
-        <li>Incident Response (Platform Health and Tooling Validation)
-            <ul>
-                <li>Periodically restore entire ADH cluster to ensure backups are valid.</li>
-                <li>Ensure Azure Security Center recommendations are being followed.</li>
-                <li>Incident Response Responsibilities, e.g. Azure DevOps, ADH Core platform resources.</li>
-            </ul>
-        </li>
+        <li>Identify and enforce best practices for pipelines deploying Aveva Data Hub services and resources.</li>
+        <li>Monitor resource usage of the Data Hub production clusters and respond as necessary. This can include configuration changes or working with development teams to prioritize a product code change.</li>
+        <li>Build additional Data Hub monitoring capabilities as needed.</li>
+        <li>Create and maintain Azure resources (subscriptions, VPNs, certificates, etc.) used for dev/test Data Hub clusters as well as work with Global R&D Cloud Dev Ops (CDO) to ensure the production environment has its necessary Azure resources (e.g., overflow subscriptions).</li>
+        <li>Enable development teams to create and destroy temporary or long-running dev/test clusters for Data Hub; build and maintain deployment automation tools as needed.</li>
+        <li>Ensure quiet enjoyment of limited-lifetime artifacts, including certificates, keys, etc.</li>
+        <li>Perform regular operations exercises (eg: quarterly cluster disaster recovery, weekly namespace recovery, etc.)</li>
+        <li>Maintain deployment test framework (PIT). Development teams maintain the actual test suites.</li>
+        <li>Track and enforce deployment test uptime policies.</li>
+        <li>Report to stakeholders on Data Hub operation KPIs: uptime, cost, deployment metrics (successes, failures, time to recover on test issues, outstanding test issues.)</li>
+        <li>Govern access to Data Hub privilege roles: (via PIM when appropriate) for temporary Data Hub cluster roles and Azure roles.</li>
     </ul>
-    
-    <h1>Infrastructure Teams</h1>
-    <p>Infrastructure teams are responsible for development and operation of core technologies, ensuring best practices of the infrastructure supporting the cloud and on-premises. Where the Operations Guild is responsible for Azure resources, Infrastructure Teams are responsible for AVEVA Operations Information software identified as core to cloud operations. Infrastructure teams are responsible for ensuring core technologies (identity, provisioning, secrets, logging, telemetry) that program teams can use, regardless of feature or component. Examples include the strategies for and libraries and services supporting logging and telemetry. All cloud development teams are responsible for using current versions of those libraries and following the strategies. Another example is the use of limited lifetime artifacts. Infrastructure develops the strategy for consuming the artifacts and any supporting source, all cloud development teams follow the strategy, and Operations supports rolling those secrets.</p>
-    <p>Infrastructure teams are also responsible for a collection of services assigned to individual Infrastructure teams by the Software Development Department Leads.</p>
-    
-    <h1>Feature Development Teams</h1>
-    <p>Feature Development Teams are responsible for the operation and health of services and pages they deploy to any environment of AVEVA Data Hub (production, staging, …). They consume frameworks and libraries from the Infrastructure teams, and they use tooling from the Operations Guild. The services for which they are responsible are assigned by the Software Development Department Leads or implied based on their current Program assignments.</p>
-    
+     
+    <h1>Development Teams</h1>
+    <p>Development teams are assigned responsibility for the development and operation of core ADH technologies, ensuring best practices of the infrastructure supporting the cloud and on-premises. Where Service Operations is responsible for Azure resources, specific development teams are responsible for AVEVA Operations Information software identified as core to cloud operations. These teams ensure core technologies (identity, provisioning, secrets, logging, telemetry) that program teams can use, regardless of feature or component. Examples include the strategies for and libraries and services supporting logging and telemetry. All cloud development teams are responsible for using current versions of those libraries and following the strategies. Another example is the use of limited lifetime artifacts. Development teams devise the strategy for consuming the artifacts and any supporting source, all cloud development teams follow the strategy, and Service Operations supports rolling those secrets.</p>
+    <p>All development teams are responsible for the operation and health of any services and pages they deploy to any environment of AVEVA Data Hub (production, staging, etc.). They consume frameworks and libraries often provided by infrastructural programs, and they use tooling from Service Operations. The services for which they are responsible are assigned by the Software Development Department Leads or implied based on their current Program assignments.</p>
+    <p>Responsibilities for Development Teams include the following:
+
     <ul>
         <li>Service Performance and Heath Monitoring
             <ul>
-                <li>Alerts</li>
-                <li>Ensure Service Health</li>
+                <li>Alerts (provide runbook for AVEVA Cloud Dev Ops and respond to requests for troubleshoting in a timely manner)</li>
+                <li>Ensure Service Health (proactively monitor health and address related issues promptly)</li>
             </ul>
         </li>
         <li>Incidence Response (Platform Health and Tooling Validation)
@@ -87,5 +45,7 @@ title: AVEVA Data Hub Operations Overview - AVEVA Operations Information R&D
             </ul>
         </li>
     </ul>
+    
+    </p>
 
 </div><!-- /.blurb -->
